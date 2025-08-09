@@ -51,7 +51,7 @@ jobs:
           key: benchmark-state-${{ hashFiles('benchmarks/**') }}
 
       - name: Install dependencies
-        run: pip install 'asv>=0.6.4'
+        run: python3 -m pip install --no-deps --no-build-isolation libmambapy/ && python3 -m pip install 'asv>=0.6.4'
 
       - name: Configure ASV
         working-directory: ${{ env.ASV_DIR }}
